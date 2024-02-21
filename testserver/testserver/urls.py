@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from gpt.views import get_openai_response;
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/get_openai_response/', get_openai_response, name='get_openai_response'),
 ]
