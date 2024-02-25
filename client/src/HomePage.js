@@ -20,7 +20,7 @@ function HomePage() {
       if (response.status === 200) {
         const data = response.data;
         // Set OpenAI response to state to display on the page
-        setResponseText(data.response);
+        setResponseText(JSON.stringify(data.response));
       } else {
         console.error("获取OpenAI响应失败");
       }

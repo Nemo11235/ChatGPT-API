@@ -1,4 +1,4 @@
-"""testserver URL Configuration
+"""backend URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -14,11 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-# import gpt.urls
+from django.urls import path
+from .views import get_openai_response
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/get_openai_response/', get_openai_response, name = 'get_openai_response' ),
 ]
-# ] + gpt.urls.urlpatterns
 
