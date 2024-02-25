@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# [NOTE] Apparently, you forgot to include the /gpt/ directory's URLs
+# and this caused the 404s.
+import gpt.urls
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+] + gpt.urls.urlpatterns

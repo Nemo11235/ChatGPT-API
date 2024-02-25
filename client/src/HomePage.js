@@ -19,8 +19,11 @@ function HomePage() {
 
       if (response.status === 200) {
         const data = response.data;
+        // [NOTE] The data returned from the backend may be an Object, or something else.
+        // The quickest way to debug what it contains is to JSON.stringify() it.
+
         // Set OpenAI response to state to display on the page
-        setResponseText(data.response);
+        setResponseText(JSON.stringify(data.response));
       } else {
         console.error("获取OpenAI响应失败");
       }
