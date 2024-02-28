@@ -7,24 +7,28 @@ function HomePage() {
 
   const handleUserInput = async () => {
     try {
-      //   const response = await axios.post(
-      //     "http://localhost:8000/api/get_openai_response/",
-      //     { user_input: userInput },
-      //     {
-      //       headers: {
-      //         "Content-Type": "application/json",
-      //       },
-      //     }
-      //   );
-
-      //   if (response.status === 200) {
-      //     const data = response.data;
-      //     // Set OpenAI response to state to display on the page
-      //     setResponseText(JSON.stringify(data.response));
-      //   } else {
-      //     console.error("获取OpenAI响应失败");
+      // const response = await axios.get(
+      //   "http://localhost:8000/api/openai/",
+      //   { user_input: userInput },
+      //   {
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
       //   }
-      const response = await axios.get("http://localhost:3001");
+      // );
+
+      // if (response.status === 200) {
+      //   const data = response.data;
+      //   // Set OpenAI response to state to display on the page
+      //   setResponseText(data.response);
+      // } else {
+      //   console.error("获取OpenAI响应失败");
+      // }
+      // const response = await axios.get("http://localhost:3001");
+
+      let response = await axios.post("http://localhost:3001", {
+        text: userInput,
+      });
       setResponseText(response.data);
     } catch (error) {
       console.error("在获取过程中发生错误：", error);
