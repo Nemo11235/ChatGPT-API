@@ -26,7 +26,7 @@ function HomePage() {
       // }
       // const response = await axios.get("http://localhost:3001");
 
-      let response = await axios.post("http://localhost:3001", {
+      let response = await axios.post("http://localhost:3001/api/openai", {
         text: userInput,
       });
       setResponseText(response.data);

@@ -3,17 +3,11 @@ const cors = require("cors");
 const OpenAI = require("openai");
 const app = express();
 const bodyParser = require("body-parser");
+require("dotenv").config();
 const port = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.static("public"));
-
-// OpenAI configuration
-
-// Your existing route
-// app.get("/", (req, res) => {
-//   res.send("Hello Express!");
-// });
 
 app.use(bodyParser.json());
 
@@ -25,27 +19,32 @@ app.post("/", (req, res) => {
   res.send(userInput);
 });
 
-// const openai = new OpenAI();
-// // OpenAI route
-// app.get("/openai", async (req, res) => {
-//   try {
-//     const stream = await openai.chat.completions.create({
-//       model: "gpt-4",
-//       messages: [{ role: "user", content: "Say this is a test" }],
-//       stream: true,
-//     });
+const key = process.env.API_KEY;
 
-//     let result = "";
-//     for await (const chunk of stream) {
-//       result += chunk.choices[0]?.delta?.content || "";
-//     }
+const openai = new OpenAI({
+  apiKey: key,
+});
+// OpenAI route
+app.post("/api/openai", async (req, res) => {
+  try {
+    let question = req.body.text;
+    const stream = await openai.chat.completions.create({
+      model: "gpt-4",
+      messages: [{ role: "user", content: question }],
+      stream: true,
+    });
 
-//     res.status(200).json({ result });
-//   } catch (error) {
-//     console.error("OpenAI error:", error);
-//     res.status(500).json({ error: "Internal Server Error" });
-//   }
-// });
+    let result = "";
+    for await (const chunk of stream) {
+      result += chunk.choices[0]?.delta?.content || "";
+    }
+
+    res.send(result);
+  } catch (error) {
+    console.error("OpenAI error:", error);
+    res.send("error");
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
