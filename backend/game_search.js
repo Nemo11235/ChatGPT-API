@@ -9,6 +9,7 @@
 
 require("dotenv").config();
 const axios = require('axios');
+const GOOGLE_SEARCH_API_RESPONSE = require(process.env.GOOGLE_SEARCH_API_RESPONSE);
 
 // [WIP] Not used yet
 // const CACHED_STEAM_GAMES = require(process.env.STEAM_GAMES_DATA);
@@ -44,6 +45,16 @@ function parseAppIdFromResults(pageResponseJson) {
         link => link.match(/\d+/)[0]);
 }
 
+// Makes an AXIOs call to get data from Google Search API.
+// If the process.env.MODE is set to 1, it will return a stub response instead.
+async function searchWithAxios(url) {
+    if (process.env.MODE !== 0) {
+        return GOOGLE_SEARCH_API_RESPONSE;
+    } else {
+        return await axios({method: 'get', url}).data;
+    }
+}
+
 // Return the top AppId results found from Google Search API
 // up to 20.
 async function googleApiSearch(userRequest) {
@@ -57,12 +68,12 @@ async function googleApiSearch(userRequest) {
     });
 
     try {
-        const page1 = await axios({method: 'get', url: googleFirstPageResultsUrlPage1});
-        // const page2 = await axios({method: 'get', url: googleFirstPageResultsUrlPage2});
+        const page1 = await searchWithAxios(googleFirstPageResultsUrlPage1);
+        const page2 = await searchWithAxios(googleFirstPageResultsUrlPage2);
 
-        const page1Results = parseAppIdFromResults(page1.data);
-        // const page2Results = parseAppIdFromResults(page2.data);
-        return page1Results; //+ page2Results;
+        const page1Results = parseAppIdFromResults(page1);
+        const page2Results = parseAppIdFromResults(page2);
+        return page1Results; + page2Results;
     } catch (error) {
         console.log('Google Search API Error: ' + error);
         return [];
@@ -78,20 +89,20 @@ function namesLookup(appIds) {
             id,
             url: `http://store.steampowered.com/app/${id}`
         };
-        console.log(id);
-        if (cachedSteamGames.has(id)) {
-            result.name = cachedSteamGames.get(id);
-        }
+        // TODO: Find an alternative method to get names.
+        // if (cachedSteamGames.has(id)) {
+        //     result.name = cachedSteamGames.get(id);
+        // }
         return result;
     });
 }
 
 exports.search = async ({userQuery}) => {
     const results = await googleApiSearch(userQuery);
-    // const namedResults = namesLookup(results);
+    const namedResults = namesLookup(results);
     return {
         searchTerm: userQuery,
-        listOfResults: results
+        listOfResults: namedResults
     };
 };
 
