@@ -3,6 +3,7 @@ const cors = require("cors");
 const OpenAI = require("openai");
 const app = express();
 const bodyParser = require("body-parser");
+const geminiModel = require('./gemini_model');
 require("dotenv").config();
 const port = process.env.PORT || 3001;
 
@@ -42,6 +43,21 @@ app.post("/api/openai", async (req, res) => {
     res.send(result);
   } catch (error) {
     console.error("OpenAI error:", error);
+    res.send("error");
+  }
+});
+
+// Google Gemini route
+app.post("/api/gemini", async (req, res) => {
+  try {
+    let question = req.body.text;
+    const response = await geminiModel.run({
+      prompt: question
+    });
+
+    res.send(response);
+  } catch (error) {
+    console.error("Google Gemini error:", error);
     res.send("error");
   }
 });
