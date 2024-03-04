@@ -48,11 +48,11 @@ function parseAppIdFromResults(pageResponseJson) {
 // Makes an AXIOs call to get data from Google Search API.
 // If the process.env.MODE is set to 1, it will return a stub response instead.
 async function searchWithAxios(url) {
-    if (process.env.MODE !== 0) {
-        return GOOGLE_SEARCH_API_RESPONSE;
-    } else {
-        return await axios({method: 'get', url}).data;
-    }
+    // if (process.env.MODE !== 0) {
+    //     return GOOGLE_SEARCH_API_RESPONSE;
+    // } else {
+    return (await axios({method: 'get', url})).data;
+    // }
 }
 
 // Return the top AppId results found from Google Search API
