@@ -4,6 +4,7 @@ const OpenAI = require("openai");
 const app = express();
 const bodyParser = require("body-parser");
 const geminiModel = require('./gemini_model');
+const gameSearch = require('./game_search');
 require("dotenv").config();
 const port = process.env.PORT || 3001;
 
@@ -58,6 +59,21 @@ app.post("/api/gemini", async (req, res) => {
     res.send(response);
   } catch (error) {
     console.error("Google Gemini error:", error);
+    res.send("error");
+  }
+});
+
+// Google Search API route
+app.post("/api/googlesearch", async (req, res) => {
+  try {
+    let question = req.body.text;
+    const response = await gameSearch.search({
+      userQuery: question
+    });
+
+    res.send(response);
+  } catch (error) {
+    console.error("Google Search error:", error);
     res.send("error");
   }
 });
