@@ -26,10 +26,10 @@ function HomePage() {
       // }
       // const response = await axios.get("http://localhost:3001");
 
-      let response = await axios.post("http://localhost:3001/api/openai", {
+      let response = await axios.post("http://localhost:3001/api/googlesearch", {
         text: userInput,
       });
-      setResponseText(response.data);
+      setResponseText( JSON.stringify(response.data) );
     } catch (error) {
       console.error("在获取过程中发生错误：", error);
     }
