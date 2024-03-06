@@ -1,0 +1,466 @@
+{
+  "kind": "customsearch#search",
+  "url": {
+    "type": "application/json",
+    "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+  },
+  "queries": {
+    "request": [
+      {
+        "title": "Google Custom Search - farming games appID",
+        "totalResults": "254000",
+        "searchTerms": "farming games appID",
+        "count": 10,
+        "startIndex": 1,
+        "inputEncoding": "utf8",
+        "outputEncoding": "utf8",
+        "safe": "off",
+        "cx": "70710aa7d10644703"
+      }
+    ],
+    "nextPage": [
+      {
+        "title": "Google Custom Search - farming games appID",
+        "totalResults": "254000",
+        "searchTerms": "farming games appID",
+        "count": 10,
+        "startIndex": 11,
+        "inputEncoding": "utf8",
+        "outputEncoding": "utf8",
+        "safe": "off",
+        "cx": "70710aa7d10644703"
+      }
+    ]
+  },
+  "context": {
+    "title": "Games search"
+  },
+  "searchInformation": {
+    "searchTime": 0.332015,
+    "formattedSearchTime": "0.33",
+    "totalResults": "254000",
+    "formattedTotalResults": "254,000"
+  },
+  "items": [
+    {
+      "kind": "customsearch#result",
+      "title": "Steam Curators",
+      "htmlTitle": "Steam Curators",
+      "link": "https://store.steampowered.com/curators/curatorsrecommending/?appid=424590",
+      "displayLink": "store.steampowered.com",
+      "snippet": "Amazing game and with many features that are unique even on planned future releases from other farm games/sims. For me its now my favorite nr1 farmsim. Enlisted ...",
+      "htmlSnippet": "Amazing game and with many features that are unique even on planned future releases from other \u003cb\u003efarm games\u003c/b\u003e/sims. For me its now my favorite nr1 farmsim. Enlisted&nbsp;...",
+      "cacheId": "14AMB8Ks8IkJ",
+      "formattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?appid...",
+      "htmlFormattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?\u003cb\u003eappid\u003c/b\u003e...",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Ep1FHiEfxPlFpmzizPXBw20xe_GmjnalOdvZeUUUfwhlf9qLUjEljp0",
+            "width": "131",
+            "height": "131"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://store.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "theme-color": "#171a21",
+            "twitter:card": "summary_large_image",
+            "twitter:title": "Steam Curators",
+            "og:type": "website",
+            "fb:app_id": "105386699540688",
+            "twitter:site": "@steam",
+            "viewport": "width=device-width,initial-scale=1",
+            "og:title": "Steam Curators",
+            "og:site": "Steam",
+            "og:image:secure": "https://store.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "twitter:image": "https://store.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://store.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Steam Curators",
+      "htmlTitle": "Steam Curators",
+      "link": "https://store.steampowered.com/curators/curatorsrecommending/?appid=667820",
+      "displayLink": "store.steampowered.com",
+      "snippet": "A very entertaining farming game mixed with puzzles, hidden objects scenes and other mini games. A very fun game to invest in. Underground Blossom. $4.99.",
+      "htmlSnippet": "A very entertaining \u003cb\u003efarming game\u003c/b\u003e mixed with puzzles, hidden objects scenes and other mini games. A very fun game to invest in. Underground Blossom. $4.99.",
+      "cacheId": "GEi1c6RKPg8J",
+      "formattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?appid...",
+      "htmlFormattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?\u003cb\u003eappid\u003c/b\u003e...",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Ep1FHiEfxPlFpmzizPXBw20xe_GmjnalOdvZeUUUfwhlf9qLUjEljp0",
+            "width": "131",
+            "height": "131"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://store.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "theme-color": "#171a21",
+            "twitter:card": "summary_large_image",
+            "twitter:title": "Steam Curators",
+            "og:type": "website",
+            "fb:app_id": "105386699540688",
+            "twitter:site": "@steam",
+            "viewport": "width=device-width,initial-scale=1",
+            "og:title": "Steam Curators",
+            "og:site": "Steam",
+            "og:image:secure": "https://store.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "twitter:image": "https://store.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://store.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Steam Curators",
+      "htmlTitle": "Steam Curators",
+      "link": "https://store.steampowered.com/curators/curatorsrecommending/?appid=1069390",
+      "displayLink": "store.steampowered.com",
+      "snippet": "Follow Indie Tag Games to see more reviews like these. Follow Following. 1,290Followers. Ignore this curator. Morningdew Farms: A Gay Farming Game. $24.99.",
+      "htmlSnippet": "Follow Indie Tag Games to see more reviews like these. Follow Following. 1,290Followers. Ignore this curator. Morningdew Farms: A Gay \u003cb\u003eFarming Game\u003c/b\u003e. $24.99.",
+      "cacheId": "fmHEe6CeEfgJ",
+      "formattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?appid...",
+      "htmlFormattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?\u003cb\u003eappid\u003c/b\u003e...",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR50PRRMaJr5AuVGLuf_5b_wF9UPZSMOEHhFhSm7GuSE0wEYBzrGMZgzFAY",
+            "width": "131",
+            "height": "131"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "theme-color": "#171a21",
+            "twitter:card": "summary_large_image",
+            "twitter:title": "Steam Curators",
+            "og:type": "website",
+            "fb:app_id": "105386699540688",
+            "twitter:site": "@steam",
+            "viewport": "width=device-width,initial-scale=1",
+            "og:title": "Steam Curators",
+            "og:site": "Steam",
+            "og:image:secure": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "twitter:image": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Steam Curators",
+      "htmlTitle": "Steam Curators",
+      "link": "https://store.steampowered.com/curators/curatorsinformative/?appid=1069390",
+      "displayLink": "store.steampowered.com",
+      "snippet": "The protagonist of this visual novel/farm managing game is a gay man who can pursue both romantic and sexual relationships with a variety of men (including ...",
+      "htmlSnippet": "The protagonist of this visual novel/\u003cb\u003efarm\u003c/b\u003e managing \u003cb\u003egame\u003c/b\u003e is a gay man who can pursue both romantic and sexual relationships with a variety of men (including&nbsp;...",
+      "cacheId": "5Bvacc59cT4J",
+      "formattedUrl": "https://store.steampowered.com/curators/curatorsinformative/?appid...",
+      "htmlFormattedUrl": "https://store.steampowered.com/curators/curatorsinformative/?\u003cb\u003eappid\u003c/b\u003e...",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR50PRRMaJr5AuVGLuf_5b_wF9UPZSMOEHhFhSm7GuSE0wEYBzrGMZgzFAY",
+            "width": "131",
+            "height": "131"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "theme-color": "#171a21",
+            "twitter:card": "summary_large_image",
+            "twitter:title": "Steam Curators",
+            "og:type": "website",
+            "fb:app_id": "105386699540688",
+            "twitter:site": "@steam",
+            "viewport": "width=device-width,initial-scale=1",
+            "og:title": "Steam Curators",
+            "og:site": "Steam",
+            "og:image:secure": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "twitter:image": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Professional Farmer 2017 - Steam Community",
+      "htmlTitle": "Professional Farmer 2017 - Steam Community",
+      "link": "https://store.steampowered.com/forums/?AppId=576930",
+      "displayLink": "store.steampowered.com",
+      "snippet": "This game is set on your own farm! Enjoy the life of a farmer with all its amazing tasks and challenges! Drive your original vehicles, cultivate your fields, ...",
+      "htmlSnippet": "This \u003cb\u003egame\u003c/b\u003e is set on your own \u003cb\u003efarm\u003c/b\u003e! Enjoy the life of a \u003cb\u003efarmer\u003c/b\u003e with all its amazing tasks and challenges! Drive your original vehicles, cultivate your fields,&nbsp;...",
+      "cacheId": "RF5AreAoUh8J",
+      "formattedUrl": "https://store.steampowered.com/forums/?AppId=576930",
+      "htmlFormattedUrl": "https://store.steampowered.com/forums/?\u003cb\u003eAppId\u003c/b\u003e=576930",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRqfx5gvev47ACuRd15pCLK5Wglj8Tayqg0i3LcTFfLirMJkTv0HcqjvP7Z",
+            "width": "329",
+            "height": "153"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://cdn.akamai.steamstatic.com/steam/apps/433670/header.jpg?t=1641987488",
+            "theme-color": "#171a21",
+            "twitter:card": "summary_large_image",
+            "twitter:title": "Steam Community :: Professional Farmer 2017",
+            "og:type": "website",
+            "fb:app_id": "105386699540688",
+            "twitter:site": "@steam",
+            "viewport": "width=device-width,initial-scale=1",
+            "twitter:description": "Professional Farmer 2017 - Games from our Friendshttps://store.steampowered.com/app/1515320/Harvest_Days/https://store.steampowered.com/app/1380220/Starsand/https://store.steampowered.com/app/1129580/Medieval_Dynasty/https://store.steampowered.com/app/1329880/Wild_West_Dynasty/https://store.steampowered.com/app/968970/Lumberjacks_Dynasty/About the GameGet ready for the rural lifestyle! This game is set on your own farm! Enjoy the life of a farmer with all its amazing tasks and challenges! Drive your original vehicles, cultivate your fields, take care of your animals and market your produce! Different seasons and weather conditions guarantee realistic game fun.Earn from your experiences as a farmer, use your knowledge to enjoy the satisfaction a farmer feels when sitting in front of the fireplace in a beautiful farmhouse after a hard working day. Your efforts will be rewarded – the better your fields are tilled, the more animals you breed, the more products you produce, the better the income available for ne",
+            "og:title": "Steam Community :: Professional Farmer 2017",
+            "og:description": "Professional Farmer 2017 - Games from our Friendshttps://store.steampowered.com/app/1515320/Harvest_Days/https://store.steampowered.com/app/1380220/Starsand/https://store.steampowered.com/app/1129580/Medieval_Dynasty/https://store.steampowered.com/app/1329880/Wild_West_Dynasty/https://store.steampowered.com/app/968970/Lumberjacks_Dynasty/About the GameGet ready for the rural lifestyle! This game is set on your own farm! Enjoy the life of a farmer with all its amazing tasks and challenges! Drive your original vehicles, cultivate your fields, take care of your animals and market your produce! Different seasons and weather conditions guarantee realistic game fun.Earn from your experiences as a farmer, use your knowledge to enjoy the satisfaction a farmer feels when sitting in front of the fireplace in a beautiful farmhouse after a hard working day. Your efforts will be rewarded – the better your fields are tilled, the more animals you breed, the more products you produce, the better the income available for ne",
+            "twitter:image": "https://cdn.akamai.steamstatic.com/steam/apps/433670/header.jpg?t=1641987488"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://cdn.akamai.steamstatic.com/steam/apps/433670/header.jpg?t=1641987488"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Steam Curators",
+      "htmlTitle": "Steam Curators",
+      "link": "https://store.steampowered.com/curators/curatorsrecommending/?appid=1629830",
+      "displayLink": "store.steampowered.com",
+      "snippet": "~Research Story~ Research Story is a fantastic farming life sim game where the main aim is to research new animals and plant life to make new records within ...",
+      "htmlSnippet": "~Research Story~ Research Story is a fantastic \u003cb\u003efarming\u003c/b\u003e life sim \u003cb\u003egame\u003c/b\u003e where the main aim is to research new animals and plant life to make new records within&nbsp;...",
+      "cacheId": "bLFKC8Rf7IoJ",
+      "formattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?appid...",
+      "htmlFormattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?\u003cb\u003eappid\u003c/b\u003e...",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR50PRRMaJr5AuVGLuf_5b_wF9UPZSMOEHhFhSm7GuSE0wEYBzrGMZgzFAY",
+            "width": "131",
+            "height": "131"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "theme-color": "#171a21",
+            "twitter:card": "summary_large_image",
+            "twitter:title": "Steam Curators",
+            "og:type": "website",
+            "fb:app_id": "105386699540688",
+            "twitter:site": "@steam",
+            "viewport": "width=device-width,initial-scale=1",
+            "og:title": "Steam Curators",
+            "og:site": "Steam",
+            "og:image:secure": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "twitter:image": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Steam Curators",
+      "htmlTitle": "Steam Curators",
+      "link": "https://store.steampowered.com/curators/curatorsrecommending/?appid=787860",
+      "displayLink": "store.steampowered.com",
+      "snippet": "FS19 is by far the most complete, immersive and polished farming game out there and now features newcomer John Deere front and center! Town of Salem 2. Free ...",
+      "htmlSnippet": "FS19 is by far the most complete, immersive and polished \u003cb\u003efarming game\u003c/b\u003e out there and now features newcomer John Deere front and center! Town of Salem 2. Free&nbsp;...",
+      "cacheId": "5-dALw5LWikJ",
+      "formattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?appid...",
+      "htmlFormattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?\u003cb\u003eappid\u003c/b\u003e...",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR50PRRMaJr5AuVGLuf_5b_wF9UPZSMOEHhFhSm7GuSE0wEYBzrGMZgzFAY",
+            "width": "131",
+            "height": "131"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "theme-color": "#171a21",
+            "twitter:card": "summary_large_image",
+            "twitter:title": "Steam Curators",
+            "og:type": "website",
+            "fb:app_id": "105386699540688",
+            "twitter:site": "@steam",
+            "viewport": "width=device-width,initial-scale=1",
+            "og:title": "Steam Curators",
+            "og:site": "Steam",
+            "og:image:secure": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "twitter:image": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Steam Curators",
+      "htmlTitle": "Steam Curators",
+      "link": "https://store.steampowered.com/curators/curatorsrecommending/?appid=433340",
+      "displayLink": "store.steampowered.com",
+      "snippet": "Both amazing for newcomers, which not many fighting games can brag about, but also spectacular for seasoned fans. ... A cute and chill little farming game about ...",
+      "htmlSnippet": "Both amazing for newcomers, which not many fighting games can brag about, but also spectacular for seasoned fans. ... A cute and chill little \u003cb\u003efarming game\u003c/b\u003e about&nbsp;...",
+      "cacheId": "yM9JYo4NX0MJ",
+      "formattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?appid...",
+      "htmlFormattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?\u003cb\u003eappid\u003c/b\u003e...",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Ep1FHiEfxPlFpmzizPXBw20xe_GmjnalOdvZeUUUfwhlf9qLUjEljp0",
+            "width": "131",
+            "height": "131"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://store.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "theme-color": "#171a21",
+            "twitter:card": "summary_large_image",
+            "twitter:title": "Steam Curators",
+            "og:type": "website",
+            "fb:app_id": "105386699540688",
+            "twitter:site": "@steam",
+            "viewport": "width=device-width,initial-scale=1",
+            "og:title": "Steam Curators",
+            "og:site": "Steam",
+            "og:image:secure": "https://store.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "twitter:image": "https://store.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://store.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Steam Curators",
+      "htmlTitle": "Steam Curators",
+      "link": "https://store.steampowered.com/curators/curatorsrecommending/?appid=1892850",
+      "displayLink": "store.steampowered.com",
+      "snippet": "22Followers. Ignore this curator. A Wholesome Game About Farming. Free. Recommended. 50% Farming sim. 50% murdering and hiding bodies. 100% surprisingly ...",
+      "htmlSnippet": "22Followers. Ignore this curator. A Wholesome \u003cb\u003eGame\u003c/b\u003e About \u003cb\u003eFarming\u003c/b\u003e. Free. Recommended. 50% \u003cb\u003eFarming\u003c/b\u003e sim. 50% murdering and hiding bodies. 100% surprisingly&nbsp;...",
+      "cacheId": "2GgWDLlIoigJ",
+      "formattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?appid...",
+      "htmlFormattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?\u003cb\u003eappid\u003c/b\u003e...",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR50PRRMaJr5AuVGLuf_5b_wF9UPZSMOEHhFhSm7GuSE0wEYBzrGMZgzFAY",
+            "width": "131",
+            "height": "131"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "theme-color": "#171a21",
+            "twitter:card": "summary_large_image",
+            "twitter:title": "Steam Curators",
+            "og:type": "website",
+            "fb:app_id": "105386699540688",
+            "twitter:site": "@steam",
+            "viewport": "width=device-width,initial-scale=1",
+            "og:title": "Steam Curators",
+            "og:site": "Steam",
+            "og:image:secure": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "twitter:image": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Steam Curators",
+      "htmlTitle": "Steam Curators",
+      "link": "https://store.steampowered.com/curators/curatorsrecommending/?appid=1592110",
+      "displayLink": "store.steampowered.com",
+      "snippet": "A promising cute game that combines adventures on tropical island and the development of your own farm. There's a cooperative. The game needs polishing and ...",
+      "htmlSnippet": "A promising cute \u003cb\u003egame\u003c/b\u003e that combines adventures on tropical island and the development of your own \u003cb\u003efarm\u003c/b\u003e. There&#39;s a cooperative. The \u003cb\u003egame\u003c/b\u003e needs polishing and&nbsp;...",
+      "cacheId": "B1ARtAqVM2gJ",
+      "formattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?appid...",
+      "htmlFormattedUrl": "https://store.steampowered.com/curators/curatorsrecommending/?\u003cb\u003eappid\u003c/b\u003e...",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR50PRRMaJr5AuVGLuf_5b_wF9UPZSMOEHhFhSm7GuSE0wEYBzrGMZgzFAY",
+            "width": "131",
+            "height": "131"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "theme-color": "#171a21",
+            "twitter:card": "summary_large_image",
+            "twitter:title": "Steam Curators",
+            "og:type": "website",
+            "fb:app_id": "105386699540688",
+            "twitter:site": "@steam",
+            "viewport": "width=device-width,initial-scale=1",
+            "og:title": "Steam Curators",
+            "og:site": "Steam",
+            "og:image:secure": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png",
+            "twitter:image": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://store.cloudflare.steamstatic.com/public/shared/images/responsive/share_steam_logo.png"
+          }
+        ]
+      }
+    }
+  ]
+}
