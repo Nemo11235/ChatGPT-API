@@ -3,21 +3,20 @@ const cors = require("cors");
 const OpenAI = require("openai");
 const app = express();
 const bodyParser = require("body-parser");
-const geminiModel = require('./gemini_model');
-const gameSearch = require('./game_search');
+const geminiModel = require("./gemini_model");
+const gameSearch = require("./game_search");
 require("dotenv").config();
 const port = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.static("public"));
 
+// for parsing data to json format
 app.use(bodyParser.json());
 
+// defualt route that returns the same data that is received
 app.post("/", (req, res) => {
-  // 获取来自前端的数据
   let userInput = req.body.text;
-
-  // 返回响应给前端（这里简单地返回接收到的数据）
   res.send(userInput);
 });
 
@@ -26,6 +25,7 @@ const key = process.env.API_KEY;
 const openai = new OpenAI({
   apiKey: key,
 });
+
 // OpenAI route
 app.post("/api/openai", async (req, res) => {
   try {
@@ -53,7 +53,7 @@ app.post("/api/gemini", async (req, res) => {
   try {
     let question = req.body.text;
     const response = await geminiModel.run({
-      prompt: question
+      prompt: question,
     });
 
     res.send(response);
@@ -68,7 +68,7 @@ app.post("/api/googlesearch", async (req, res) => {
   try {
     let question = req.body.text;
     const response = await gameSearch.search({
-      userQuery: question
+      userQuery: question,
     });
 
     res.send(response);
