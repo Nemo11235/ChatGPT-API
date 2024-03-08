@@ -3,7 +3,10 @@ import axios from "axios";
 
 function HomePage() {
   const [userInput, setUserInput] = useState("");
-  const [responseText, setResponseText] = useState(""); // State to store OpenAI response
+  const [responseText, setResponseText] = useState({
+    searchTerm: "popular roguelike games",
+    listOfResults: [],
+  });
 
   const handleUserInput = async () => {
     try {
@@ -26,10 +29,13 @@ function HomePage() {
       // }
       // const response = await axios.get("http://localhost:3001");
 
-      let response = await axios.post("http://localhost:3001/api/googlesearch", {
-        text: userInput,
-      });
-      setResponseText( JSON.stringify(response.data) );
+      let response = await axios.post(
+        "http://localhost:3001/api/googlesearch",
+        {
+          text: userInput,
+        }
+      );
+      setResponseText(response.data);
     } catch (error) {
       console.error("在获取过程中发生错误：", error);
     }
@@ -46,12 +52,13 @@ function HomePage() {
       <button onClick={handleUserInput}>Submit</button>
 
       {/* Display the OpenAI response on the page */}
-      {responseText && (
-        <div>
-          <h2>OpenAI Response:</h2>
-          <p>{responseText}</p>
+      {responseText.listOfResults.map((result) => (
+        <div key={result.id}>
+          <a href={result.url} target="_blank" rel="noopener noreferrer">
+            {result.url}
+          </a>
         </div>
-      )}
+      ))}
     </div>
   );
 }

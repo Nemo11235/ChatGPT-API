@@ -20,10 +20,8 @@ app.post("/", (req, res) => {
   res.send(userInput);
 });
 
-const key = process.env.API_KEY;
-
 const openai = new OpenAI({
-  apiKey: key,
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 // OpenAI route
