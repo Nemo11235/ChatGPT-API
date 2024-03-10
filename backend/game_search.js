@@ -43,33 +43,45 @@ function createGoogleSearchApiUrl({ term, start }) {
   );
 }
 
-// Returns a list of AppIds in format ['1', '2', ...].
-function parseAppIdFromResults(pageResponseJson) {
+// Returns a JSON containing the following fields:
+// {
+//    title: string
+//    link: string
+//    snippet: string
+//    cseThumbnail: {
+//      src: string, 
+//      width: number,
+//      height: number
+//    } | undefined
+// }
+//
+function parseAppFromResults(pageResponseJson) {
   return pageResponseJson.items
-    .map((item) => item.link)
-    .filter((link) => link.match(/appid/))
-    .map((link) => link.match(/\d+/)[0]);
+    .filter((item) => (item.link || '').match("store.steampowered.com/app/"))
+    .map((item) => ({
+      title: item.title,
+      link: item.link,
+      snippet: item.snippet,
+      thumbnail: item.pagemap.cse_thumbnail[0]
+    }));
 }
 
 // Makes an AXIOs call to get data from Google Search API.
 // If the process.env.MODE is set to 1, it will return a stub response instead.
 async function searchWithAxios(url) {
-  // if (process.env.MODE !== 0) {
-  //     return GOOGLE_SEARCH_API_RESPONSE;
-  // } else {
+  console.log(`Google Search API request sent: ${url}`);
   return (await axios({ method: "get", url })).data;
-  // }
 }
 
 // Return the top AppId results found from Google Search API
 // up to 20.
 async function googleApiSearch(userRequest) {
   const googleFirstPageResultsUrlPage1 = createGoogleSearchApiUrl({
-    term: userRequest + " games appID",
+    term: userRequest,
     start: 0,
   });
   const googleFirstPageResultsUrlPage2 = createGoogleSearchApiUrl({
-    term: userRequest + " games appID",
+    term: userRequest,
     start: 11,
   });
 
@@ -77,39 +89,20 @@ async function googleApiSearch(userRequest) {
     const page1 = await searchWithAxios(googleFirstPageResultsUrlPage1);
     const page2 = await searchWithAxios(googleFirstPageResultsUrlPage2);
 
-    const page1Results = parseAppIdFromResults(page1);
-    const page2Results = parseAppIdFromResults(page2);
-    return page1Results;
-    +page2Results;
+    const page1Results = parseAppFromResults(page1);
+    const page2Results = parseAppFromResults(page2);
+    return page1Results.concat(page2Results);
   } catch (error) {
     console.log("Google Search API Error: " + error);
     return [];
   }
 }
 
-// Input numerical Steam AppIds ['1','2','3'] to lookup the names in the
-// game database.
-function namesLookup(appIds) {
-  return appIds.map((appId) => {
-    const id = parseInt(appId, 10);
-    let result = {
-      id,
-      url: `http://store.steampowered.com/app/${id}`,
-    };
-    // TODO: Find an alternative method to get names.
-    // if (cachedSteamGames.has(id)) {
-    //     result.name = cachedSteamGames.get(id);
-    // }
-    return result;
-  });
-}
-
 exports.search = async ({ userQuery }) => {
   const results = await googleApiSearch(userQuery);
-  const namedResults = namesLookup(results);
   return {
     searchTerm: userQuery,
-    listOfResults: namedResults,
+    listOfResults: results,
   };
 };
 
