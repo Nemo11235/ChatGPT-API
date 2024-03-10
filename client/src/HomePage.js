@@ -54,8 +54,8 @@ function HomePage() {
       {/* Display the OpenAI response on the page */}
       {responseText.listOfResults.map((result) => (
         <div key={result.id}>
-          <a href={result.url} target="_blank" rel="noopener noreferrer">
-            {result.url}
+          <a href={result.link} target="_blank" rel="noopener noreferrer">
+            {result.link}
           </a>
         </div>
       ))}
