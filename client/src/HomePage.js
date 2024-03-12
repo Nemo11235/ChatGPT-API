@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./HomePage.scss";
 
 function HomePage() {
   const [userInput, setUserInput] = useState("");
@@ -42,14 +43,22 @@ function HomePage() {
   };
 
   return (
-    <div>
-      <h1>HomePage</h1>
+    <div className="homepage-root">
+      <div className="serach-div"></div>
       <input
+        className="input-box"
         type="text"
         value={userInput}
+        placeholder="What do you want to play?"
         onChange={(e) => setUserInput(e.target.value)}
       />
-      <button onClick={handleUserInput}>Submit</button>
+      <button className="search-btn" onClick={handleUserInput}>
+        <img
+          className="mag-glass"
+          src="./icons/magnifyingGlass.jpg"
+          alt="Magnifying Glass"
+        ></img>
+      </button>
 
       {/* Display the OpenAI response on the page */}
       {responseText.listOfResults.map((result) => (
