@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./HomePage.scss";
 
 function HomePage() {
   const [userInput, setUserInput] = useState("");
@@ -42,19 +43,30 @@ function HomePage() {
   };
 
   return (
-    <div>
-      <h1>HomePage</h1>
-      <input
-        type="text"
-        value={userInput}
-        onChange={(e) => setUserInput(e.target.value)}
-      />
-      <button onClick={handleUserInput}>Submit</button>
+    <div className="homepage-root">
+      <div className="search-div">
+        <h1>Smart Game Picks</h1>
+        <input
+          className="input-box"
+          type="text"
+          value={userInput}
+          placeholder="What do you want to play?"
+          onChange={(e) => setUserInput(e.target.value)}
+        />
+        <button className="search-btn" onClick={handleUserInput}>
+          Search
+        </button>
+      </div>
 
       {/* Display the OpenAI response on the page */}
       {responseText.listOfResults.map((result) => (
-        <div key={result.id}>
-          <a href={result.link} target="_blank" rel="noopener noreferrer">
+        <div className="url-div" key={result.id}>
+          <a
+            className="url"
+            href={result.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {result.link}
           </a>
         </div>
