@@ -44,10 +44,8 @@
 
 .url-div {
   margin-top: 5px;
-  height: 25px;
-  border: none;
-  width: 50vw;
-  border-radius: 5%;
+  display: flex;
+  flex-direction: row;
 }
 
 .url {
