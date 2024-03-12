@@ -44,26 +44,29 @@ function HomePage() {
 
   return (
     <div className="homepage-root">
-      <div className="serach-div"></div>
-      <input
-        className="input-box"
-        type="text"
-        value={userInput}
-        placeholder="What do you want to play?"
-        onChange={(e) => setUserInput(e.target.value)}
-      />
-      <button className="search-btn" onClick={handleUserInput}>
-        <img
-          className="mag-glass"
-          src="./icons/magnifyingGlass.jpg"
-          alt="Magnifying Glass"
-        ></img>
-      </button>
+      <div className="search-div">
+        <h1>Smart Game Picks</h1>
+        <input
+          className="input-box"
+          type="text"
+          value={userInput}
+          placeholder="What do you want to play?"
+          onChange={(e) => setUserInput(e.target.value)}
+        />
+        <button className="search-btn" onClick={handleUserInput}>
+          Search
+        </button>
+      </div>
 
       {/* Display the OpenAI response on the page */}
       {responseText.listOfResults.map((result) => (
-        <div key={result.id}>
-          <a href={result.link} target="_blank" rel="noopener noreferrer">
+        <div className="url-div" key={result.id}>
+          <a
+            className="url"
+            href={result.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {result.link}
           </a>
         </div>
