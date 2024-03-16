@@ -46,12 +46,13 @@ app.post("/api/openai", async (req, res) => {
   }
 });
 
-// Google Gemini route
+// Testing endpoint to ask Google Gemini to fanout the
+// user's query to more targeted search queries.
 app.post("/api/gemini", async (req, res) => {
   try {
     let question = req.body.text;
-    const response = await geminiModel.run({
-      prompt: question,
+    const response = await gameSearch.fanout({
+      userQuery: question,
     });
 
     res.send(response);

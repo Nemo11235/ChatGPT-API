@@ -9,21 +9,8 @@
 
 require("dotenv").config();
 const axios = require("axios");
-// const GOOGLE_SEARCH_API_RESPONSE = require(process.env.GOOGLE_SEARCH_API_RESPONSE);
-
-// [WIP] Not used yet
-// const CACHED_STEAM_GAMES = require(process.env.STEAM_GAMES_DATA);
-// const geminiModel = require('./gemini_model');
-
-// [WIP] The list of games here seems to be incomplete
-// (possibly missing latest game updates?)
-// const cachedSteamGames = (() => {
-//     map = new Map();
-//     CACHED_STEAM_GAMES.applist.apps.forEach(app => {
-//         map[parseInt(app.appid,10)] = app.name;
-//     })
-//     return map;
-// })();
+const prompts = require("./prompts");
+const geminiModel = require("./gemini_model");
 
 function createGoogleSearchApiUrl({ term, start }) {
   const encodedQuery = encodeURIComponent(term);
@@ -106,17 +93,23 @@ exports.search = async ({ userQuery }) => {
   };
 };
 
-// WIP
-// const terms = await geminiModel.run({
-//     prompt: 'The user is looking for a game suggestion. ' +
-//             'The library of information only contains a list of names of all the games. ' +
-//             'We need to do a linear search in the library by matching name of games ' +
-//             'with keyword terms. From the user\'s conversational input, please ' +
-//             'derive a list of search terms that can potentially ' +
-//             'match games that satisfies the user\'s interest. Each search term ideally ' +
-//             'contains less than 3 words. Please be creative. For example, if input is ' +
-//             '"FPS", the suggested terms can include "Warfare", "Frontline", ""' User's input: ${
-//                 userRequest}. Output: `;
-// });
-
-// Parse terms
+// Given user's search query, query a model to fanout to multiple additional
+// search modifiers. Return them as a list of string if success.
+exports.fanout = async ({ userQuery }) => {
+  const fanoutPrompt = prompts.gamesFanout(userQuery);
+  console.log(`Model prompt: ${fanoutPrompt}`);
+  const modelResponse = await geminiModel.run({prompt: fanoutPrompt});
+  try {
+    console.log(`Model response: ${modelResponse}`);
+    return {
+      searchTerm: userQuery,
+      listOfResults: modelResponse.split('|').map((result) => result.trim('\n')),
+    };
+  } catch (e) {
+    console.log(e);
+    return {
+      searchTerm: userQuery,
+      errorMessage: JSON.stringify(e),
+    };
+  }
+}
