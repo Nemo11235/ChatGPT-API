@@ -77,6 +77,21 @@ app.post("/api/googlesearch", async (req, res) => {
   }
 });
 
+// Fanout search route.
+app.post("/api/googlefanout", async (req, res) => {
+  try {
+    const question = req.body.text;
+    const response = await gameSearch.fanoutSearches({
+      userQuery: question,
+    });
+
+    res.send(response);
+  } catch (error) {
+    console.error("Google Fanout Search error:", error);
+    res.send("error");
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
