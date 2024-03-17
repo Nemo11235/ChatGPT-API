@@ -127,7 +127,7 @@ exports.fanout = fanout;
 //   ]
 // }
 // An errorMessage field will show up if a search api fetch is unsuccessful.
-exports.fanoutSearches = async({ userQuery }) => {
+exports.fanoutSearches = async({ userQuery, debug = true }) => {
   console.log('[fanoutSearches] Fanout model call begin');
   const {listOfResults, errorMessage} = await fanout({userQuery});
   if (errorMessage !== undefined) {

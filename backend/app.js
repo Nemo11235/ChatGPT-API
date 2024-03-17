@@ -5,6 +5,9 @@ const app = express();
 const bodyParser = require("body-parser");
 const geminiModel = require("./gemini_model");
 const gameSearch = require("./game_search");
+
+const stubbedFanoutResponse = require("./backend_testdata/example-google-fanout-response.json");
+
 require("dotenv").config();
 const port = process.env.PORT || 3001;
 
@@ -81,6 +84,13 @@ app.post("/api/googlesearch", async (req, res) => {
 app.post("/api/googlefanout", async (req, res) => {
   try {
     const question = req.body.text;
+    const debug = req.body.debug;
+    if (debug !== 'false') {
+      // Stub procedure
+      console.log('[/api/googlefanout] Return stubbed response.');
+      res.send(stubbedFanoutResponse);
+      return;
+    }
     const response = await gameSearch.fanoutSearches({
       userQuery: question,
     });
