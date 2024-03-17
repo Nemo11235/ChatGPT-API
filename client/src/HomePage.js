@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./HomePage.scss";
+// import ImageFetcher from "./ImageFetcher.js";
 
 function HomePage() {
   const [userInput, setUserInput] = useState("");
@@ -61,13 +62,14 @@ function HomePage() {
       {/* Display the OpenAI response on the page */}
       {responseText.listOfResults.map((result) => (
         <div className="url-div" key={result.id}>
+          <img src={result.thumbnail.src} alt="thumbnail"></img>
           <a
             className="url"
             href={result.link}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {result.link}
+            {result.title}
           </a>
         </div>
       ))}
