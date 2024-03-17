@@ -9,6 +9,10 @@ function HomePage() {
     searchTerm: "popular roguelike games",
     listOfResults: [],
   });
+  const [fanoutResult, setFanoutResult] = useState({
+    searchTerm: "",
+    listOfResults: [],
+  });
 
   const handleUserInput = async () => {
     try {
@@ -38,6 +42,15 @@ function HomePage() {
         }
       );
       setResponseText(response.data);
+      
+      // Test returning fanout response from Gemini.
+      // let fanoutResponse = await axios.post(
+      //   "http://localhost:3001/api/gemini",
+      //   {
+      //     text: userInput,
+      //   }
+      // );
+      // setFanoutResult(fanoutResponse.data);
     } catch (error) {
       console.error("在获取过程中发生错误：", error);
     }
@@ -73,6 +86,14 @@ function HomePage() {
           </a>
         </div>
       ))}
+
+      {/* Display the Gemini fanout response on the page */}
+      {fanoutResult.listOfResults ? fanoutResult.listOfResults.map((resultText) => (
+        <div className="url-div" key={resultText}>
+          {resultText}
+        </div>
+      )) : ''}
+      {fanoutResult.errorMessage ? fanoutResult.errorMessage : ''}
     </div>
   );
 }
