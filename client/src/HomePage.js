@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./HomePage.scss";
-// import ImageFetcher from "./ImageFetcher.js";
 
 function HomePage() {
   const [userInput, setUserInput] = useState("");
@@ -13,6 +12,24 @@ function HomePage() {
     searchTerm: "",
     listOfResults: [],
   });
+  const [showFanout, setShowFanout] = useState(false);
+  const [showGameList, setShowGameList] = useState(false);
+
+  const handleSelectFanout = async (keyword) => {
+    try {
+      let response = await axios.post(
+        "http://localhost:3001/api/googlesearch",
+        {
+          text: keyword,
+        }
+      );
+      setShowFanout(false);
+      setShowGameList(true);
+      setResponseText(response.data);
+    } catch (e) {
+      console.error("获取游戏列表中发生错误", e);
+    }
+  };
 
   const handleUserInput = async () => {
     try {
@@ -35,22 +52,24 @@ function HomePage() {
       // }
       // const response = await axios.get("http://localhost:3001");
 
-      let response = await axios.post(
-        "http://localhost:3001/api/googlesearch",
-        {
-          text: userInput,
-        }
-      );
-      setResponseText(response.data);
-      
-      // Test returning fanout response from Gemini.
-      // let fanoutResponse = await axios.post(
-      //   "http://localhost:3001/api/gemini",
+      // let response = await axios.post(
+      //   "http://localhost:3001/api/googlesearch",
       //   {
       //     text: userInput,
       //   }
       // );
-      // setFanoutResult(fanoutResponse.data);
+      // setResponseText(response.data);
+
+      // Test returning fanout response from Gemini.
+      let fanoutResponse = await axios.post(
+        "http://localhost:3001/api/gemini",
+        {
+          text: userInput,
+        }
+      );
+      setFanoutResult(fanoutResponse.data);
+      setShowFanout(true);
+      setShowGameList(false);
     } catch (error) {
       console.error("在获取过程中发生错误：", error);
     }
@@ -73,27 +92,35 @@ function HomePage() {
       </div>
 
       {/* Display the OpenAI response on the page */}
-      {responseText.listOfResults.map((result) => (
-        <div className="url-div" key={result.id}>
-          <img src={result.thumbnail.src} alt="thumbnail"></img>
-          <a
-            className="url"
-            href={result.link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {result.title}
-          </a>
-        </div>
-      ))}
+      {showGameList &&
+        responseText.listOfResults.map((result) => (
+          <div className="url-div" key={result.id}>
+            <img src={result.thumbnail.src} alt="thumbnail"></img>
+            <a
+              className="url"
+              href={result.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {result.title}
+            </a>
+          </div>
+        ))}
 
       {/* Display the Gemini fanout response on the page */}
-      {fanoutResult.listOfResults ? fanoutResult.listOfResults.map((resultText) => (
-        <div className="url-div" key={resultText}>
-          {resultText}
-        </div>
-      )) : ''}
-      {fanoutResult.errorMessage ? fanoutResult.errorMessage : ''}
+      {showFanout && fanoutResult.listOfResults
+        ? fanoutResult.listOfResults.map((resultText) => (
+            <div className="url-div" key={resultText}>
+              <button
+                style={{ cursor: "pointer" }}
+                onClick={() => handleSelectFanout(resultText)}
+              >
+                {resultText}
+              </button>
+            </div>
+          ))
+        : ""}
+      {fanoutResult.errorMessage ? fanoutResult.errorMessage : ""}
     </div>
   );
 }
