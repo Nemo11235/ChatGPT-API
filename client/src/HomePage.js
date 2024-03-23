@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./HomePage.scss";
+import { Gamepad2 } from "lucide-react";
 
 function HomePage() {
   const [userInput, setUserInput] = useState("");
@@ -78,7 +79,16 @@ function HomePage() {
   return (
     <div className="homepage-root">
       <div className="search-div">
-        <h1>Smart Game Picks</h1>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          <h1>Smart Game Picks</h1> <Gamepad2 style={{ marginLeft: "20px" }} />
+        </div>
+
         <input
           className="input-box"
           type="text"
@@ -108,11 +118,12 @@ function HomePage() {
         ))}
 
       {/* Display the Gemini fanout response on the page */}
+      {showFanout && <h2>You might be interested in...</h2>}
       {showFanout && fanoutResult.listOfResults
         ? fanoutResult.listOfResults.map((resultText) => (
             <div className="url-div" key={resultText}>
               <button
-                style={{ cursor: "pointer" }}
+                className="fanout-result-btn"
                 onClick={() => handleSelectFanout(resultText)}
               >
                 {resultText}

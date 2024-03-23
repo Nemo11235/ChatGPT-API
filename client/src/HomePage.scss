@@ -28,6 +28,10 @@
   color: white;
 }
 
+.search-btn:hover {
+  scale: 1.01;
+}
+
 .input-box {
   width: 400px;
   padding: 0 70px 0 5px;
@@ -50,4 +54,26 @@
 
 .url {
   text-decoration: none;
+}
+
+.fanout-result-btn {
+  display: flex;
+  padding: 0 7px;
+  justify-content: center;
+  align-items: center;
+
+  height: 21px;
+
+  font-weight: 600;
+  font-size: 12px;
+  color: #3399ff;
+  background-color: #dfefff;
+
+  border-radius: 21px;
+  border: none;
+}
+
+.fanout-result-btn:hover {
+  cursor: pointer;
+  scale: 1.01;
 }
